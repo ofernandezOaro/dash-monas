@@ -1,4 +1,5 @@
 export const createProduct = async (data: any) => {
+  /* api */
   try {
     const formdata = new FormData();
     Object.entries(data).forEach(([key, value]) => {
@@ -6,6 +7,7 @@ export const createProduct = async (data: any) => {
         formdata.append(key, value as string);
       }
     });
+
     formdata.append("file", data.file[0]);
 
     const res = await fetch(`${import.meta.env.VITE_BASE_API_URL}api/artworks/add-artwork`, {
