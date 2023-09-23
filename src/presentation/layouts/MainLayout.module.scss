@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+
+  @media (max-width: 1200px) {
+    max-width: 992px;
+    width: 100%;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 768px;
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    max-width: 578px;
+    width: 100%;
+  }
+  @media (max-width: 578px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,434 @@
+[
+  {
+    "value": "Perla Coco Chanel",
+    "keyname": "Accesorios"
+  },
+  {
+    "value": "Coco Chanel",
+    "keyname": "Accesorios"
+  },
+  {
+    "value": "Perla De Oro",
+    "keyname": "Accesorios"
+  },
+  {
+    "value": "Dorado",
+    "keyname": "Accesorios"
+  },
+  {
+    "value": "Perla Doble",
+    "keyname": "Accesorios"
+  },
+  {
+    "value": "Perla Espiral",
+    "keyname": "Accesorios"
+  },
+  {
+    "value": "Loro",
+    "keyname": "Accesorios"
+  },
+  {
+    "value": "Estrella",
+    "keyname": "Accesorios"
+  },
+  {
+    "value": "None",
+    "keyname": "Accesorios"
+  },
+  {
+    "value": "Sonrisa",
+    "keyname": "Boca"
+  },
+  {
+    "value": "Risa",
+    "keyname": "Boca"
+  },
+  {
+    "value": "Beso",
+    "keyname": "Boca"
+  },
+  {
+    "value": "Juguetona",
+    "keyname": "Boca"
+  },
+  {
+    "value": "Burlona",
+    "keyname": "Boca"
+  },
+  {
+    "value": "Bermellon",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Amarillo",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Blanco",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Grafito",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Violeta",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Verde Uriburu",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Naranja Oscuro",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Celeste",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Lila Complice",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Miel Complice",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Rosa",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Lila",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Turquesa Complice",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Miel",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Lima",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Punk",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Verde Complice",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Anteojos Dorados",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Esmeralda",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Lima Complice",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Naranja",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Turquesa",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Anteojos Courreges",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Cobre",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Rosa Complice",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Naranja Complice",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Cobre Complice",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Celeste Complice",
+    "keyname": "Ojos"
+  },
+  {
+    "value": "Colorado",
+    "keyname": "Pelaje"
+  },
+  {
+    "value": "Negro",
+    "keyname": "Pelaje"
+  },
+  {
+    "value": "Gris",
+    "keyname": "Pelaje"
+  },
+  {
+    "value": "Albino",
+    "keyname": "Pelaje"
+  },
+  {
+    "value": "Verde",
+    "keyname": "Pelaje"
+  },
+  {
+    "value": "Rubio",
+    "keyname": "Pelaje"
+  },
+  {
+    "value": "Castaño Oscuro",
+    "keyname": "Pelaje"
+  },
+  {
+    "value": "Azul",
+    "keyname": "Pelaje"
+  },
+  {
+    "value": "Tocado Espacial",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Sobrero Pollo",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Futurista Colorado",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Reina",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Futurista Verde",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Punk",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Tocado Re Mona",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Futurista",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Tocado De Plumas",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Jopo",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Sombrero Velo",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Afro",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Picapiedra",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Ludovica",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Sombrero Arcoiris",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Tocado Marilu",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Watkins",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Futurista Amarillo",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Peinado Futurista Violeta",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Tocado Serpiente",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Tocado Helado",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Sombrero Carmen Miranda",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Tocado Afrika",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Tocado Felisa Celeste",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Tocado Felisa Amarillo",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Sombrero Pollo",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Sombrero Nubes",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Tocado Nina",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Moño Minnie",
+    "keyname": "Sombrero"
+  },
+  {
+    "value": "Traje Genial",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Platino",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Vestido Vogue Azul",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Corbata",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Chaleco Mariposa",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Vestido Ludovica",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Camisa De Estrellas",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Remera Mix & Match",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Desnuda",
+    "keyname": "Traje"
+  },
+  {
+    "value": "TShirt",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Espacial",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Afrika",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Pop",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Washington",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Vestido Rumba",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Chaleco Bordado",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Naval",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Vestido Celia Cruz",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Remera Arcoiris",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Vestido Lazo",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Remera Corazon",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Gris",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Camisa Mosca",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Animal Print",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Vestido Besucona",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Watkins",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Remera Bahia",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Vestido Pat",
+    "keyname": "Traje"
+  },
+  {
+    "value": "Traje Re Mona",
+    "keyname": "Traje"
+  }
+]

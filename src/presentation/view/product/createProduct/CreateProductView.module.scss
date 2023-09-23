@@ -1,0 +1,71 @@
+.CreateProductView {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.CreateProductView_Form {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.CreateProductView_Image {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  img {
+    object-position: center center;
+    object-fit: cover;
+    width: 300px;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+  }
+
+  .CreateProductView_ImageName {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+  }
+}
+
+.CreateProductView_Inputs {
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: 12px 24px;
+  box-sizing: border-box;
+
+  input,
+  select {
+    height: 32px;
+    box-sizing: border-box;
+  }
+}
+
+.CreateProductView_Submit {
+  height: 44px;
+  min-width: 130px;
+  box-sizing: border-box;
+  float: right;
+  cursor: pointer;
+}
+
+.CreateProductView_ErrorMessage {
+  color: rgb(168, 36, 36);
+}
