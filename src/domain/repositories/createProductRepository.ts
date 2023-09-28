@@ -1,42 +1,38 @@
-import { createProduct } from '../../infrastructure/dataSource/dataSource';
+import { createProduct, asigneProduct, asigneContentProduct } from '../../infrastructure/dataSource/dataSource';
+import productStore from '../../aplication/redux/product.store';
+import { CreateProductEntity } from '../entities/productEntity';
+import { ResultEntity } from '../entities/resultEntity';
+import snackStore from '../../aplication/redux/snack.store';
+class ProductRepository {
 
-
-class CounterRepository {
-  constructor() { }
-
-  /* public async getCount(): Promise<number> {
+  public async updateUser(newName: string): Promise<void> {
     // call HTTP requests
-    // or get count in store (cache)
-    return counterStore.getCount();
+    productStore.updateUser(newName);
   }
 
-  public async increment(by: number): Promise<void> {
+  public async showUser(): Promise<void> {
     // call HTTP requests
-
-    // increment count in store
-    counterStore.setCount(counterStore.getCount() + by);
+    return productStore.showUser();
   }
 
-  public async decrement(by: number): Promise<void> {
-    // call HTTP requests
-
-    // decrement count in store
-    counterStore.setCount(counterStore.getCount() - by);
+  public async createProduct(data: CreateProductEntity): Promise<ResultEntity> {
+    const { isError, isLoading, isSuccess, result, res } = await createProduct(data);
+    return { isError, isLoading, isSuccess, result, res };
   }
 
-  public async showState(): Promise<void> {
-    // call HTTP requests
+  public async asigneProduct(data: any): Promise<ResultEntity> {
+    const { isError, isLoading, isSuccess, result, res } = await asigneProduct(data);
+    return { isError, isLoading, isSuccess, result, res };
+  }
 
-    // decrement count in store
-    counterStore.setCount(counterStore.getCount());
-  } */
+  public async asigneContentProduct(data: any): Promise<ResultEntity> {
+    const { isError, isLoading, isSuccess, result, res } = await asigneContentProduct(data);
+    return { isError, isLoading, isSuccess, result, res };
+  }
 
-
-  public async createProduct(data: any): Promise<{ isError: boolean; isLoading: boolean; isSuccess: boolean; result: any; }> {
-    const { isError, isLoading, isSuccess, result } = await createProduct(data);
-
-    return { isError, isLoading, isSuccess, result };
+  public showMessage(message: string, type: string): void {
+    snackStore.showMessage(message, type);
   }
 }
 
-export default new CounterRepository();
+export default new ProductRepository();

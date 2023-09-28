@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "../../components/custom/button/Button";
 import { LiList } from "../../components/custom/list/LiList";
 import { UlList } from "../../components/custom/list/UlList";
 import styles from "./RootView.module.scss";
@@ -11,10 +10,13 @@ const RootView = () => {
         <Link to={"/dashboard"}>
           <LiList>Crear Mona</LiList>
         </Link>
-        <LiList>Asignar Mona</LiList>
-        <LiList>Asignar Contenido Exclusivo</LiList>
+        <Link to={"/asignar-producto"}>
+          <LiList>Asignar Mona</LiList>
+        </Link>
+        <Link to={"/exclusive-content"}>
+          <LiList>Asignar Contenido Exclusivo</LiList>
+        </Link>
       </UlList>
-      <Button>Click me!</Button>
     </div>
   );
 };
