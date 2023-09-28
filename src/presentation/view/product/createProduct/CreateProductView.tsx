@@ -2,35 +2,25 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./CreateProductView.module.scss";
 import { Hr } from "../../../components/custom/hr/Hr";
 import { useCombos } from "../../../../aplication/hooks/useCombos";
-import { useEffect, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import CreateProductViewModel from "./CreateProductViewModel";
-
-type Inputs = {
-  number: number;
-  user_email: string;
-  file: File;
-  traje: string;
-  ojos: string;
-  boca: string;
-  sombrero: string;
-  pelaje: string;
-  fondo: string;
-  accesorios: string;
-};
+import { CreateProductEntity } from "../../../../domain/entities/productEntity";
+import { Modal } from "../../../components/custom/modal/Moda";
 
 const CreateProductView = () => {
-  const { isError, isLoading, isSuccess, result, getResult } =
-    CreateProductViewModel();
+  const { state, getResult } = CreateProductViewModel();
   const { accesorios, trajes, ojos, boca, sombrero, pelaje, fondo } =
     useCombos();
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedFileImage, setSelectedImage] = useState("");
+  const [resume, setResume] = useState(false);
+  const [newData, setData] = useState<any>();
   const {
     handleSubmit,
     register,
-    reset,
+    watch,
     formState: { errors },
-  } = useForm<Inputs>({
+  } = useForm<CreateProductEntity>({
     defaultValues: {
       number: undefined,
       user_email: "",
@@ -45,8 +35,13 @@ const CreateProductView = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = async (data: any) => {
-    getResult(data);
+  const sendData = () => {
+    getResult(newData);
+  };
+
+  const onSubmit: SubmitHandler<CreateProductEntity> = async (data: any) => {
+    setResume(true);
+    setData(data);
   };
 
   const handleFileChange = (e: any) => {
@@ -56,14 +51,6 @@ const CreateProductView = () => {
       setSelectedImage(file.name);
     }
   };
-
-  useEffect(() => {
-    if (isSuccess) {
-      reset();
-      setSelectedFile(null);
-      setSelectedImage("");
-    }
-  }, [result]);
 
   return (
     <>
@@ -116,7 +103,7 @@ const CreateProductView = () => {
             )}
 
             <label htmlFor={"user_email"}>Email del comprador</label>
-            <input {...register("user_email", { required: true })} />
+            <input {...register("user_email")} />
             {errors.user_email && (
               <span className={styles.CreateProductView_ErrorMessage}>
                 This field is required
@@ -229,72 +216,46 @@ const CreateProductView = () => {
             )}
           </div>
         </div>
-        <div className={styles.CreateProductView_Form}>
-          <button
-            disabled={isLoading}
-            className={styles.CreateProductView_Submit}
-            type="submit"
-          >
-            {isLoading ? "Cargando" : "Enviar"}
-          </button>
-          {isSuccess && <p>¡Enviado!</p>}
-          {isError && <p>¡Ha ocurrido un problema, inténtalo más tarde!</p>}
-        </div>
+
+        {resume && (
+          <Modal title="Resume" isClosable={() => setResume(!resume)}>
+            <div className={styles.CreateProductView_Resume}>
+              Numero de mona: {watch("number")}
+            </div>
+            <div className={styles.CreateProductView_Resume}>
+              Usuario: {watch("user_email")}
+            </div>
+            <div className={styles.CreateProductView_Resume}>
+              <ul>
+                <li>Ojos: {watch("ojos")}</li>
+                <li>Boca: {watch("boca")}</li>
+                <li>Traje: {watch("traje")}</li>
+                <li>Sombrero: {watch("sombrero")}</li>
+                <li>Pelaje: {watch("pelaje")}</li>
+                <li>Fondo: {watch("fondo")}</li>
+                <li>Accesorios: {watch("accesorios")}</li>
+              </ul>
+            </div>
+            <button
+              disabled={state.isLoading}
+              className={styles.CreateProductView_Submit}
+              onClick={sendData}
+            >
+              {state.isLoading ? "Cargando" : "Enviar"}
+            </button>
+          </Modal>
+        )}
+
+        <button
+          disabled={state.isLoading}
+          className={styles.CreateProductView_Submit}
+          type="submit"
+        >
+          Enviar
+        </button>
       </form>
     </>
   );
 };
 
 export default CreateProductView;
-
-{
-  /* <SelectInput
-              name={accesorios}
-              label={"Accesorios"}
-              htmlFor={"accesorios"}
-              registerName={"accesorios"}
-              className={styles.CreateProductView_ErrorMessage}
-            />
-            <SelectInput
-              name={trajes}
-              label={"Traje"}
-              htmlFor={"traje"}
-              registerName={"traje"}
-              className={styles.CreateProductView_ErrorMessage}
-            />
-            <SelectInput
-              name={ojos}
-              label={"Ojos"}
-              htmlFor={"ojos"}
-              registerName={"ojos"}
-              className={styles.CreateProductView_ErrorMessage}
-            />
-            <SelectInput
-              name={boca}
-              label={"Boca"}
-              htmlFor={"boca"}
-              registerName={"boca"}
-              className={styles.CreateProductView_ErrorMessage}
-            />
-            <SelectInput
-              name={sombrero}
-              label={"Sombrero"}
-              htmlFor={"sombrero"}
-              registerName={"sombrero"}
-              className={styles.CreateProductView_ErrorMessage}
-            />
-            <SelectInput
-              name={pelaje}
-              label={"Pelaje"}
-              htmlFor={"pelaje"}
-              registerName={"pelaje"}
-              className={styles.CreateProductView_ErrorMessage}
-            />
-            <SelectInput
-              name={fondo}
-              label={"Fondo"}
-              htmlFor={"fondo"}
-              registerName={"fondo"}
-              className={styles.CreateProductView_ErrorMessage}
-            /> */
-}

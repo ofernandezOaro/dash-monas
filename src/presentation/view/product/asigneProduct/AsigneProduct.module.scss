@@ -1,0 +1,54 @@
+.AsigneProductView_Form {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.AsigneProductView_Inputs {
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: 12px 24px;
+  box-sizing: border-box;
+
+  input,
+  select {
+    height: 32px;
+    box-sizing: border-box;
+  }
+}
+
+.AsigneProductView_Submit {
+  height: 44px;
+  min-width: 130px;
+  box-sizing: border-box;
+  float: right;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.AsigneProductView_ErrorMessage {
+  color: rgb(168, 36, 36);
+}
+
+.AsigneProductView_Resume {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.AsigneProductView_ResumeBox {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f0f0f0;
+  gap: 24px;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  margin-top: 2rem;
+}

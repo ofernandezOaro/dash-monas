@@ -1,27 +1,37 @@
+import { CreateProductEntity } from "../entities/productEntity";
+import { ResultEntity } from "../entities/resultEntity";
+
 interface ProductRepositoryInterface {
-  /* increment(by: number): Promise<void>;
-  decrement(by: number): Promise<void>;
-  showState(): Promise<void>; */
-  createProduct(product: any): Promise<{ isError: boolean; isLoading: boolean; isSuccess: boolean; result: null; }>;
+  updateUser(newName: string): Promise<void>;
+  showUser(): Promise<void>;
+  createProduct(product: CreateProductEntity): Promise<ResultEntity>;
+  asigneProduct(product: any): Promise<ResultEntity>;
+  asigneContentProduct(product: any): Promise<ResultEntity>;
+  showMessage(message: string, type: string): void;
 }
-
 export default class ProductServicesUseCases {
-  constructor(protected counterRepository: ProductRepositoryInterface) { }
+  constructor(protected productRepository: ProductRepositoryInterface) { }
 
-  /* public async increment(by: number): Promise<void> {
-    return this.counterRepository.increment(by);
+  public async showUser(): Promise<void> {
+    return this.productRepository.showUser();
   }
 
-  public async decrement(by: number): Promise<void> {
-    return this.counterRepository.decrement(by);
+  public async updateUser(newName: string): Promise<void> {
+    return this.productRepository.updateUser(newName);
   }
 
-  public async showState(): Promise<void> {
-    return this.counterRepository.showState();
-  } */
+  public async createProduct(data: any) {
+    const { isError, isLoading, isSuccess, result, res } = await this.productRepository.createProduct(data);
+    return { isError, isLoading, isSuccess, result, res };
+  }
 
-  public async createProduct(data: any): Promise<{ isError: boolean; isLoading: boolean; isSuccess: boolean; result: null; }> {
-    const { isError, isLoading, isSuccess, result } = await this.counterRepository.createProduct(data);
-    return { isError, isLoading, isSuccess, result };
+  public async asigneProduct(data: any) {
+    const { isError, isLoading, isSuccess, result, res } = await this.productRepository.asigneProduct(data);
+    return { isError, isLoading, isSuccess, result, res };
+  }
+
+  public async asigneContentProduct(data: any) {
+    const { isError, isLoading, isSuccess, result, res } = await this.productRepository.asigneContentProduct(data);
+    return { isError, isLoading, isSuccess, result, res };
   }
 }

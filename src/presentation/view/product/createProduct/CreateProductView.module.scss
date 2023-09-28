@@ -64,8 +64,28 @@
   box-sizing: border-box;
   float: right;
   cursor: pointer;
+  margin-top: 2rem;
 }
 
 .CreateProductView_ErrorMessage {
   color: rgb(168, 36, 36);
+}
+
+.CreateProductView_Resume {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.CreateProductView_ResumeBox {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f0f0f0;
+  gap: 24px;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  margin-top: 2rem;
 }
