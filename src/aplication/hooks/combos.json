@@ -1,9 +1,5 @@
 [
   {
-    "value": "Perla Coco Chanel",
-    "keyname": "Accesorios"
-  },
-  {
     "value": "Coco Chanel",
     "keyname": "Accesorios"
   },
@@ -81,6 +77,34 @@
   },
   {
     "value": "Naranja Oscuro",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Gris",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Rosa",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Celeste",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Lima",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Verde",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Naranja",
+    "keyname": "Fondo"
+  },
+  {
+    "value": "Negro",
     "keyname": "Fondo"
   },
   {
@@ -225,10 +249,6 @@
   },
   {
     "value": "Tocado Re Mona",
-    "keyname": "Sombrero"
-  },
-  {
-    "value": "Peinado Futurista",
     "keyname": "Sombrero"
   },
   {
