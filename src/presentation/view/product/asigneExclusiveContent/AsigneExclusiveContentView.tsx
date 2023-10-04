@@ -24,7 +24,6 @@ const AsigneExclusiveContent = () => {
     handleSubmit,
     register,
     watch,
-    resetField,
     formState: { errors },
   } = useForm<Inputs>({
     defaultValues: {
