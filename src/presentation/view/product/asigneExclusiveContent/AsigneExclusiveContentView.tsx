@@ -76,7 +76,7 @@ const AsigneExclusiveContent = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className={styles.AsigneProductView_Inputs}>
-          <label htmlFor="artworkId">Numero de mona</label>
+          <label htmlFor="artworkId">Numero de monas</label>
           <input
             id="artworkId"
             type="artworkId"
