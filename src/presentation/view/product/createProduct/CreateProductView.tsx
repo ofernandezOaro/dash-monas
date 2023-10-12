@@ -2,13 +2,13 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./CreateProductView.module.scss";
 import { Hr } from "../../../components/custom/hr/Hr";
 import { useCombos } from "../../../../aplication/hooks/useCombos";
-import { useState } from "preact/hooks";
-import CreateProductViewModel from "./CreateProductViewModel";
+import { useEffect, useState } from "preact/hooks";
 import { CreateProductEntity } from "../../../../domain/entities/productEntity";
 import { Modal } from "../../../components/custom/modal/Moda";
+import DI from "../../../../DI/ioc";
 
 const CreateProductView = () => {
-  const { state, getResult } = CreateProductViewModel();
+  const { state, getResult } = DI.resolve("CreateProductViewModel");
   const { accesorios, trajes, ojos, boca, sombrero, pelaje, fondo } =
     useCombos();
   const [selectedFile, setSelectedFile] = useState(null);
@@ -18,6 +18,7 @@ const CreateProductView = () => {
   const {
     handleSubmit,
     register,
+    reset,
     watch,
     formState: { errors },
   } = useForm<CreateProductEntity>({
@@ -34,6 +35,15 @@ const CreateProductView = () => {
       accesorios: "",
     },
   });
+
+  useEffect(() => {
+    if (state.isSuccess) {
+      setResume(false);
+      reset();
+      setSelectedFile(null);
+      setSelectedImage("");
+    }
+  }, [state.isSuccess]);
 
   const sendData = () => {
     getResult(newData);
@@ -52,9 +62,10 @@ const CreateProductView = () => {
     }
   };
 
+
   return (
     <>
-      <h1>Crear Mona</h1>
+    <h1>Crear Mona</h1>
       <Hr />
       <form
         className={styles.CreateProductView_Form}
@@ -218,7 +229,7 @@ const CreateProductView = () => {
         </div>
 
         {resume && (
-          <Modal title="Resume" isClosable={() => setResume(!resume)}>
+          <Modal title="Resume" isClosable={() => setResume(!resume)} isOpened={resume}>
             <div className={styles.CreateProductView_Resume}>
               Numero de mona: {watch("number")}
             </div>

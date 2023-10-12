@@ -2,9 +2,10 @@ import { useState } from "preact/hooks";
 import useCreateProduct from "../../../../aplication/hooks/useCreateProduct";
 import { CreateProductEntity } from "../../../../domain/entities/productEntity";
 import useSnack from "../../../../aplication/hooks/useSnack";
+import { CreateProductUseCaseInteface } from "../../../../domain/useCases/product/ProductUseCaseInterfaces";
 
-const CreateProductViewModel = () => {
-  const { createProduct, updateUser, user, showUser } = useCreateProduct();
+const CreateProductViewModel = ({CreateProductUseCase}: CreateProductUseCaseInteface) => {
+  const { createProduct, updateUser, user, showUser } = useCreateProduct({CreateProductUseCase});
   const { showMessage } = useSnack();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);

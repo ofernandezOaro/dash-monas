@@ -1,9 +1,9 @@
-import AsigneExclusiveContentProduct from "./AsigneExclusiveContentViewModel";
 import { Hr } from "../../../components/custom/hr/Hr";
 import styles from "./AsigneExclusiveContent.module.scss";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useState } from "preact/hooks";
 import { Modal } from "../../../components/custom/modal/Moda";
+import DI from "../../../../DI/ioc";
 
 type VersionType = "phoneVersion" | "tvVersion" | "watchVersion";
 
@@ -14,11 +14,11 @@ interface Inputs {
 }
 
 const AsigneExclusiveContent = () => {
+  const { state, getResult } = DI.resolve("AsigneExclusiveContent");
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileName, setFileName] = useState("");
   const [resume, setResume] = useState(false);
   const [newData, setData] = useState(false);
-  const { getResult, state } = AsigneExclusiveContentProduct();
 
   const {
     handleSubmit,
@@ -128,7 +128,7 @@ const AsigneExclusiveContent = () => {
         </div>
 
         {resume === true && (
-          <Modal title="Resume" isClosable={() => setResume(false)}>
+          <Modal title="Resume" isClosable={() => setResume(false)} isOpened={resume}>
             <div className={styles.AsigneProductView_ResumeBox}>
               <div className={styles.AsigneProductView_Resume}>
                 Numero de mona: {watch("artworkId")}

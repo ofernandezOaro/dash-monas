@@ -1,9 +1,9 @@
 import { useState } from "preact/hooks";
-import AsignProductViewModel from "./asignProductViewModel";
 import { Hr } from "../../../components/custom/hr/Hr";
 import styles from "./AsigneProduct.module.scss";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Modal } from "../../../components/custom/modal/Moda";
+import DI from "../../../../DI/ioc";
 
 interface Inputs {
   number: number;
@@ -11,7 +11,7 @@ interface Inputs {
 }
 
 const AsignProductView = () => {
-  const { getResult, state } = AsignProductViewModel();
+  const { state, getResult } = DI.resolve("AsignProductViewModel");
   const [resume, setResume] = useState(false);
   const [newData, setData] = useState<any>();
 
@@ -75,7 +75,7 @@ const AsignProductView = () => {
         </div>
 
         {resume === true && (
-          <Modal title="Resume" isClosable={() => setResume(false)}>
+          <Modal title="Resume" isClosable={() => setResume(false)} isOpened={resume}>
             <div className={styles.AsigneProductView_ResumeBox}>
               <div className={styles.AsigneProductView_Resume}>
                 Numero de mona: {watch("number")}

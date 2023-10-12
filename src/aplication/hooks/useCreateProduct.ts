@@ -1,27 +1,22 @@
-import ProductServicesUseCases from "../../domain/useCases/createProductUseCase";
-import productRepository from "../../domain/repositories/createProductRepository";
 import productStore from "../redux/product.store";
 import { useState } from "preact/hooks";
 import { CreateProductEntity } from "../../domain/entities/productEntity";
+import { CreateProductUseCaseInteface } from "../../domain/useCases/product/ProductUseCaseInterfaces";
 
-// Creamos una instancia del servicio con el repositorio por parámetro
-const productUseCase = new ProductServicesUseCases(productRepository);
-
-// Este es el hook que se va a usar en el componente
-export default function useCreateProduct() {
+export const useCreateProduct = ({ CreateProductUseCase }: CreateProductUseCaseInteface) => {
   const [user, setUser] = useState(productStore.showUser());
 
   const updateUser = async (newName: string) => {
     setUser(newName);
-    await productUseCase.updateUser(newName);
+    await CreateProductUseCase.updateUser(newName);
   };
 
   const showUser = async () => {
-    await productUseCase.showUser();
+    await CreateProductUseCase.showUser();
   };
 
   const createProduct = async (data: CreateProductEntity) => {
-    const { isError, isLoading, isSuccess, result, res } = await productUseCase.createProduct(data);
+    const { isError, isLoading, isSuccess, result, res } = await CreateProductUseCase.createProduct(data);
     return { isError, isLoading, isSuccess, result, res };
   }
 
@@ -32,3 +27,5 @@ export default function useCreateProduct() {
     showUser
   };
 }
+
+export default useCreateProduct;

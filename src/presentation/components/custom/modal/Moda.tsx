@@ -1,9 +1,11 @@
+import { createPortal } from "preact/compat";
 import styled from "styled-components";
 
 interface Props {
-  children: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[] | DocumentFragment | React.ReactNode;
   isClosable?: () => void;
   title?: string;
+  isOpened: boolean;
 }
 
 const BackDropStyled = styled.div`
@@ -49,8 +51,13 @@ const ModalStyled = styled.div`
   }
 `;
 
-export const Modal = ({ title, isClosable, children }: Props) => {
-  return (
+export const Modal = ({ title, isClosable, isOpened,  children }: Props) => {
+  const modalRoot = document.getElementById("modal");
+
+  if (!isOpened) {
+    return null;
+  }
+  return createPortal(
     <BackDropStyled>
       <ModalStyled>
         <header>
@@ -65,6 +72,7 @@ export const Modal = ({ title, isClosable, children }: Props) => {
         </header>
         {children}
       </ModalStyled>
-    </BackDropStyled>
+    </BackDropStyled>,
+    modalRoot as Element
   );
 };

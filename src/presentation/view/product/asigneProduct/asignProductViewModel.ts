@@ -1,9 +1,10 @@
 import { useState } from "preact/hooks";
 import useAsigneProduct from "../../../../aplication/hooks/useAsignProduct";
 import useSnack from "../../../../aplication/hooks/useSnack";
+import { AsigneProductUseCaseInteface } from "../../../../domain/useCases/product/ProductUseCaseInterfaces";
 
-const AsignProductViewModel = () => {
-  const { asigneProduct } = useAsigneProduct();
+const AsignProductViewModel = ({AsigneProductUseCase}: AsigneProductUseCaseInteface ) => {
+  const { asigneProduct } = useAsigneProduct({AsigneProductUseCase});
   const { showMessage } = useSnack();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
